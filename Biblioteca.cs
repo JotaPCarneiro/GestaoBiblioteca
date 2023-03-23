@@ -24,21 +24,21 @@ namespace GestaoBiblioteca {
             Livros.Add(livro);
         }
 
-        public void EmprestarLivroBiblioteca(int idLivro, int idPessoa) {
-            Livro livroEmprestado = Livros.FirstOrDefault(livro => livro.Id == idLivro && livro.Disponivel);
-            if (livroEmprestado == null) {
-                Console.WriteLine("Livro não disponível para empréstimo");
-                return;
-            }
+       public void EmprestarLivroBiblioteca(int idLivro, int idPessoa, int quantidadeEmprestada) {
+         Livro livroEmprestado = Livros.FirstOrDefault(livro => livro.Id == idLivro && livro.Disponivel);
+    if (livroEmprestado == null) {
+        Console.WriteLine("Livro não disponível para empréstimo");
+        return;
+         }
 
-            Pessoa pessoa = Pessoas.FirstOrDefault(p => p.Id == idPessoa);
-            if (pessoa == null) {
-                Console.WriteLine("Pessoa não encontrada");
-                return;
-            }
+    Pessoa pessoa = Pessoas.FirstOrDefault(p => p.Id == idPessoa);
+    if (pessoa == null) {
+        Console.WriteLine("Pessoa não encontrada");
+        return;
+         }
 
-            livroEmprestado.EmprestarLivro();
-            pessoa.AdicionarLivroLista(livroEmprestado);
+    livroEmprestado.EmprestarLivro(quantidadeEmprestada);
+    pessoa.AdicionarLivroLista(livroEmprestado);
         }
 
         public void DevolverLivroBiblioteca(int idLivro, int idPessoa) {
