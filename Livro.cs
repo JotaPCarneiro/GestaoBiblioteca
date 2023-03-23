@@ -12,6 +12,7 @@ namespace GestaoBiblioteca {
         public string Autor { get; set; }
         public string Editora { get; set; }
         public int QuantidadeExemplares { get; set; }
+        public bool Disponivel { get; set; }
 
         public Livro() { }
 
