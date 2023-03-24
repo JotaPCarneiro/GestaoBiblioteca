@@ -29,25 +29,25 @@
                         Console.WriteLine("Informe o ID: ");
                         pessoa.Id = Int32.Parse(Console.ReadLine());
 
-                       Console.WriteLine("Informe o ID: ");
-                        pessoa.Id = Int32.Parse(Console.ReadLine());
+                        //Verifica se o ID digitado já existe na lista de pessoas cadastradas
+                        foreach (Pessoa p in pessoasCadastradas) {
 
-                        // Verifica se o ID digitado já existe na lista de pessoas cadastradas
-                        while (pessoasCadastradas.Any(p => p.Id == pessoa.Id)) {
-                            Console.WriteLine("Já existe uma pessoa cadastrada com o ID informado. Por favor, informe um novo ID: ");
-                            pessoa.Id = Int32.Parse(Console.ReadLine());
-                        }
+                            if (p.Id == pessoa.Id) {
 
-                        Console.WriteLine("Informe o Nome: ");
-                        pessoa.Nome = Console.ReadLine();
+                                Console.WriteLine("Já existe um usuário cadastrado com o ID informado.");
 
-                        Console.WriteLine("Informe o CPF: ");
-                        pessoa.Cpf = Console.ReadLine();
+                            } else {
 
-                        Console.WriteLine("Informe o Telefone: ");
-                        pessoa.Telefone = Console.ReadLine();
+                                Console.WriteLine("Informe o nome: ");
+                                pessoa.Nome = Console.ReadLine();
 
-                        pessoasCadastradas.Add(pessoa);
+                                Console.WriteLine("Informe o CPF: ");
+                                pessoa.Cpf = Console.ReadLine();
+
+                                Console.WriteLine("Informe o Telefone: ");
+                                pessoa.Telefone = Console.ReadLine();
+
+                                pessoasCadastradas.Add(pessoa);
 
                             }
 
