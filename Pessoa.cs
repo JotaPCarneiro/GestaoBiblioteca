@@ -27,8 +27,8 @@ namespace GestaoBiblioteca {
             LivrosEmprestados.Add(livro);
         }
 
-        public void RemoverLivroLista(int idLivro) {
-            LivrosEmprestados.RemoveAt(idLivro);
+        public void RemoverLivroLista(Livro livro) {
+            LivrosEmprestados.Remove(livro);
         }
     }
 }
