@@ -29,8 +29,8 @@ namespace GestaoBiblioteca {
             QuantidadeExemplares -= quantidadeEmprestada;
         }
 
-        public void DevolverLivro(int quantidadeDevolvida) {
-            QuantidadeExemplares += quantidadeDevolvida;
+        public void DevolverLivro() {
+            Disponivel = true;
         }
 
         
