@@ -1,9 +1,11 @@
 ﻿namespace GestaoBiblioteca {
-    internal class Menu {
+    public class Menu {
         static void Main(string[] args) {
 
             List<Pessoa> pessoasCadastradas = new List<Pessoa>();
             List<Livro> livrosCadastrados = new List<Livro>();
+            
+             Biblioteca biblioteca = new Biblioteca(pessoasCadastradas, livrosCadastrados);
 
             int op = 0;
             bool auxOp = true;
