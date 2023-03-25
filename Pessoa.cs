@@ -13,7 +13,10 @@ namespace GestaoBiblioteca {
         public string Telefone { get; set; }
         public List<Livro> LivrosEmprestados { get; set; }
 
-        public Pessoa() { }
+        public Pessoa()
+        {
+            LivrosEmprestados = new List<Livro>();
+        }
 
         public Pessoa(int id, string nome, string cpf, string telefone, List<Livro> livrosEmprestados) {
             Id = id;
